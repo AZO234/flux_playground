@@ -1,0 +1,38 @@
+# comfyui_playground 直接依存のみ。ComfyUI 本体・Impact-Pack・Impact-Subpack の依存は
+# それぞれの requirements.txt を別途インストールする方針 (重複させない、README 参照)。
+#
+# PyTorch は環境に合わせて個別にインストールする (この requirements には含めない)
+#   CPU 版 :  pip install --index-url https://download.pytorch.org/whl/cpu  torch torchvision
+#   CUDA12 :  pip install --index-url https://download.pytorch.org/whl/cu124 torch torchvision
+#   CUDA13 :  pip install --index-url https://download.pytorch.org/whl/cu128 torch torchvision
+# 参照: https://pytorch.org/get-started/locally/
+
+# safetensors I/O (common.save_file)
+safetensors
+
+# 画像 (common / pngutil / gallery / generate_gui)
+Pillow
+
+# 設定ファイル (Python 3.11+ は tomllib 標準。3.10 互換用に tomli/tomli-w)
+tomli
+tomli-w
+
+# ADetailer YOLO モデル + Flux VAE (ae.safetensors) 等の自動 DL (generate.py)
+# (旧 SDXL 安定 VAE の自動 DL もここ。Flux 化で ae 取得に差し替え予定)
+huggingface-hub
+
+# ComfyUI HTTP API への multipart POST 画像アップロード (generate.py)
+requests
+
+# ComfyUI HTTP API への WebSocket 進捗ストリーミング (generate.py)
+websocket-client
+
+# ComfyUI プロセスの kill+restart (generate.py --arch cpu/cuda 切替時)
+psutil
+
+# 対話 TUI (lora_chance_ui.py の矢印+Space 多選択)
+questionary
+
+# generate_gui.py のリファレンス画像ドラッグ&ドロップ (Tkinter に D&D 標準が無いので追加)
+# 無くても GUI 起動はする (D&D だけ no-op になる)
+tkinterdnd2

@@ -1,0 +1,24 @@
+[tensors_dirs]
+list = [
+    "3_1_F1_checkpoint",
+    "3_2_F1_LoRA",
+    "3_3_F1_ControlNet",
+    "3_4_F1_VAE",
+    "3_5_F1_Embedding",
+]
+
+[LoRA_preview_template]
+ware = "a lady, solo, full body, weared, standing, looking at viewer, simple background"
+doing1 = "a lady, solo, full body, simple background"
+doing2 = "two ladies, full body, interaction, simple background"
+doing3 = "three ladies, full body, interaction, simple background"
+doingmob = "ladies, full body, interaction, simple background"
+object = "nobody, simple background"
+part = "a lady, solo, close-up, simple background"
+view = "a lady, solo, full body, simple background"
+place = "nobody, scenery"
+artstyle = "a lady, solo, upper body, looking at viewer, detailed, simple background"
+unknown = "a lady, solo, upper body, simple background"
+
+[checkpoint_preview_template]
+default = "a lady, solo, full body, weared, standing, looking at viewer, simple background"
